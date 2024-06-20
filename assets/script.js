@@ -21,7 +21,7 @@ const bannerImg = document.querySelector('.banner-img');
 const tagLine = document.querySelector('#banner p');
 const leftBtn = document.querySelector('.arrow_left');
 const rightBtn = document.querySelector('.arrow_right');
-const dots = document.querySelectorAll('.dot')
+const dots = document.querySelectorAll('.dot');
 let imageIndex = 0;
 
 function updateSlider() {
@@ -31,8 +31,8 @@ function updateSlider() {
 }
 
 function updateDots() {
-	dots.forEach((dot, index) =>{
-		if(index === imageIndex) {
+	dots.forEach ((dot, index) => {
+		if (index === imageIndex) {
 			dot.classList.add('dot_selected')
 		} else {
 			dot.classList.remove('dot_selected')
@@ -40,17 +40,17 @@ function updateDots() {
 	})
 }
 
-function nextSlider() {
-	if (imageIndex < slides.length - 1){
+function nextSlide() {
+	if (imageIndex < slides.length - 1) {
 		imageIndex++;
 	} else {
 		imageIndex = 0
 	}
-	updateSlider();
+    updateSlider();
 	updateDots();
 }
 
-function prevSlider() {
+function prevSlide() {
 	if (imageIndex > 0) {
 		imageIndex--;
 	} else {
@@ -60,8 +60,8 @@ function prevSlider() {
 	updateDots();
 }
 
-leftBtn.addEventListener('click', prevSlider);
-rightBtn.addEventListener('click', nextSlider);
+leftBtn.addEventListener('click', prevSlide);
+rightBtn.addEventListener('click', nextSlide);
 
 updateSlider();
 updateDots();
